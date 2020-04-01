@@ -1,0 +1,16 @@
+<div fxLayout="column" fxFlex="grow" fxLayoutAlign="center center">
+  <h2 mat-dialog-title>Add Restaurant</h2>
+
+  <mat-form-field class="long">
+    <input matInput [(ngModel)]="restaurant.name" type="text" placeholder="Name of the restaurant">
+  </mat-form-field>
+
+  <mat-form-field class="long">
+    <input matInput [(ngModel)]="restaurant.imagePath" type="text" placeholder="Image url">
+  </mat-form-field>
+
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <button mat-raised-button (click)="onCreate()" color="primary" [disabled]="!restaurant.name || !restaurant.imagePath">Create</button>
+    <button mat-raised-button (click)="onCancel()" color="primary" class="left-margin">Cancel</button>
+  </div>
+</div>

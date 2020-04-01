@@ -1,0 +1,32 @@
+<div fxLayout="column" fxLayoutAlign="space-between center">
+  <mat-form-field>
+    <mat-label>Select User</mat-label>
+    <mat-select [(ngModel)]="selectedUser">
+      <mat-option *ngFor="let user of users;let i = index" [value]="user">
+        {{user.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-radio-group [(ngModel)]="userAction" color="primary" [disabled]="!selectedUser.name">
+    <mat-radio-button value="edit">Edit</mat-radio-button>
+    <mat-radio-button value="delete" class="left-margin">Delete</mat-radio-button>
+  </mat-radio-group>
+  <div *ngIf="userAction === 'edit'" fxLayout="column" fxLayoutAlign="space-between center">
+    <mat-form-field class="long">
+      <input matInput type="text" placeholder="Name" [(ngModel)]="newUser.name">
+    </mat-form-field>
+    <mat-form-field class="long">
+      <input matInput type="email" placeholder="email" [(ngModel)]="newUser.email">
+    </mat-form-field>
+    <mat-form-field class="long">
+      <input matInput type="password" placeholder="Password" [(ngModel)]="newUser.password">
+    </mat-form-field>
+    <mat-form-field class="long">
+      <input matInput type="text" placeholder="User Type" [(ngModel)]="newUser.userType">
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <button mat-raised-button color="primary" (click)="onConfirm()">Confirm</button>
+    <button mat-raised-button color="primary" (click)="onCancel()" class="left-margin">Cancel</button>
+  </div>
+</div>

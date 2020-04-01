@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files\controller">
+      <UniqueIdentifier>{52447e5b-0f41-41cc-8f14-790ae9e58ca7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\communication">
+      <UniqueIdentifier>{dc002aa9-092e-4590-89e4-4b69cddcfd22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\communication\consumer">
+      <UniqueIdentifier>{00e57567-9237-4662-b943-870ed0502428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\storage">
+      <UniqueIdentifier>{410ff5c6-805e-4500-9eca-ff3f33cc3c9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\storage\repository">
+      <UniqueIdentifier>{61ecc671-0a72-4627-8213-bf4fc990b367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\manager">
+      <UniqueIdentifier>{d8d58626-5113-4788-9692-402314607dac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{086c8ca7-eb00-4a6f-a5c8-cf6fe31bbf6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\storage\sqlite">
+      <UniqueIdentifier>{0f07ad35-9d6d-4a5c-9171-d91ab8ddf6a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities">
+      <UniqueIdentifier>{de9cf9e6-b086-4a2d-8c5d-04a6dcff06ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities\users">
+      <UniqueIdentifier>{c43e720a-9c69-43c1-8fef-d77053e6f9ab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\Controller.cpp">
+      <Filter>Source Files\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="storage\repository\RestaurantRepository.cpp">
+      <Filter>Source Files\storage\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="storage\repository\UserRepository.cpp">
+      <Filter>Source Files\storage\repository</Filter>
+    </ClCompile>
+    <ClCompile Include="manager\RestaurantManager.cpp">
+      <Filter>Source Files\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="manager\UserManager.cpp">
+      <Filter>Source Files\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="communication\consumer\RestaurantConsumer.cpp">
+      <Filter>Source Files\communication\consumer</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\Constants.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\Utils.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="storage\sqlite\SQLite.cpp">
+      <Filter>Source Files\storage\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Restaurant.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\users\AdministratorUser.cpp">
+      <Filter>Source Files\entities\users</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\users\OwnerUser.cpp">
+      <Filter>Source Files\entities\users</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\users\ReviewerUser.cpp">
+      <Filter>Source Files\entities\users</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\users\User.cpp">
+      <Filter>Source Files\entities\users</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\users\UserFactory.cpp">
+      <Filter>Source Files\entities\users</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Review.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\Logs.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="communication\consumer\UserConsumer.cpp">
+      <Filter>Source Files\communication\consumer</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="communication\consumer\IConsumer.h">
+      <Filter>Source Files\communication\consumer</Filter>
+    </ClInclude>
+    <ClInclude Include="storage\repository\RestaurantRepository.h">
+      <Filter>Source Files\storage\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="storage\repository\UserRepository.h">
+      <Filter>Source Files\storage\repository</Filter>
+    </ClInclude>
+    <ClInclude Include="manager\RestaurantManager.h">
+      <Filter>Source Files\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="manager\UserManager.h">
+      <Filter>Source Files\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="communication\consumer\RestaurantConsumer.h">
+      <Filter>Source Files\communication\consumer</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Constants.h">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Utils.h">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="storage\sqlite\SQLite.h">
+      <Filter>Source Files\storage\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Restaurant.h">
+      <Filter>Source Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\users\AdministratorUser.h">
+      <Filter>Source Files\entities\users</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\users\OwnerUser.h">
+      <Filter>Source Files\entities\users</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\users\ReviewerUser.h">
+      <Filter>Source Files\entities\users</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\users\User.h">
+      <Filter>Source Files\entities\users</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\ISerializable.h">
+      <Filter>Source Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\users\UserFactory.h">
+      <Filter>Source Files\entities\users</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Review.h">
+      <Filter>Source Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Logs.h">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="communication\consumer\UserConsumer.h">
+      <Filter>Source Files\communication\consumer</Filter>
+    </ClInclude>
+    <ClInclude Include="Tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="controller\Controller.h">
+      <Filter>Source Files\controller</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

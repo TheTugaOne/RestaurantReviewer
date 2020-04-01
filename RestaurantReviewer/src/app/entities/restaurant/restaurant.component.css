@@ -1,0 +1,63 @@
+.product-page-container {
+    max-width: 1140px;
+    text-align: left;
+    padding: 0 30px;
+    margin: auto;
+}
+
+.product-title {
+    margin:15px 0;
+    font-size:2.5em;
+    font-weight: 400;
+    font-family: "Playfair Display";
+}
+
+.best-worst-reviews {
+    margin:15px 0;
+    font-size:1.5em;
+    font-weight: 400;
+    font-family: "Playfair Display";
+}
+
+.product-description {
+    color: #7d7d7d;
+    margin:10px 0 30px 0;
+}
+
+.product-details-image {
+    width: 95%;
+    padding-top: 63.3%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.product-page {
+    width: 100%;
+}
+
+.product-breadcrumbs {
+    padding: 30px 0;
+}
+
+.product-breadcrumbs li{
+    display: inline-block;
+    letter-spacing: .1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .85em;
+}
+.product-breadcrumbs li a {
+    color: #4a4a4a;
+}
+.product-breadcrumbs li:last-child{
+    opacity: 0.5;
+}
+
+.long {
+    width: 300px !important;
+  }
+
+  .top-margin {
+      margin-top: 10px;
+  }

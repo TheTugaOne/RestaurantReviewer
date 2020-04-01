@@ -1,0 +1,69 @@
+<div *ngIf="restaurant" class="product-page">
+    <div class="product-page-container">
+        <ol class="product-breadcrumbs" style='text-align: center'>
+            <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+            <li class="breadcrumb-item">{{restaurant.name}}</li>
+        </ol>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="product-details-image"
+                    [ngStyle]="{'background-image': 'url(./assets/images/hugo-restaurant-restaurant-chocolat.jpg)'}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <h1 class="product-title">{{restaurant.name}}</h1>
+                    <div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                        purus pulvinar, placerat turpis ac, interdum metus. In eget massa sed enim hendrerit auctor a
+                        eget.</div>
+                </div>
+                <div *ngIf="userService.currentUserType === 'Reviewer'" class="column">
+                    <div *ngIf="!alreadyReviewed; else alreadyReviewedMessage">
+                        <div style="margin-bottom: 5px;">Leave a review !</div>
+                        <star-rating value="0" [totalstars]="5" checkedcolor="orange" uncheckedcolor="black" size="40"
+                            readonly="false" #reviewRating>
+                        </star-rating>
+                        <mat-form-field class="long">
+                            <input matInput type="text" placeholder="How was this place ?" #reviewComment>
+                        </mat-form-field>
+                        <button mat-raised-button (click)="onSubmitReview(reviewRating.value, reviewComment.value)"
+                            color="primary">Submit Review</button>
+                    </div>
+                    <ng-template #alreadyReviewedMessage>
+                        <div>
+                            You have already reviewed this restaurant !
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="best-worst-reviews col-md-4" *ngIf="bestReview.reply || worstReview.reply">Best / Worst reviews :</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <app-review *ngIf="bestReview.reply" [review]="bestReview" style="border: 2px solid primary; 
+                border-radius: 5px;"></app-review>
+            </div>
+            <div class="col-md-4">
+                <app-review *ngIf="worstReview.reply && worstReview !== bestReview"
+                    [review]="worstReview">
+                </app-review>
+            </div>
+        </div>
+        <div class="row top-margin" *ngFor="let reviewData of restaurant.reviews;let i = index">
+            <div class="col-md-8">
+                <app-review (reviewAccepted)="onReviewAccepted($event)" *ngIf="showReview(reviewData.reply)"
+                    [review]="reviewData"></app-review>
+                <div *ngIf="userService.currentUserType === 'Admin'">
+                    <button mat-raised-button (click)="onEditReview(i)" color="primary">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-raised-button (click)="onDeleteReview(i)" color="primary" style="margin-left: 5px;">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-raised-button (click)="onAddRestaurant()"
+      *ngIf="router.url === '/home' && userService.currentUserType === 'Owner'">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-raised-button (click)="onEditUsers()"
+      *ngIf="router.url === '/home' && userService.currentUserType === 'Admin'">
+      <mat-icon>people</mat-icon>
+    </button>
+    <span class="example-fill-remaining-space"></span>
+    <div *ngIf="userService.currentUserEmail">
+      <span>Welcome {{userService.currentUserName}} !</span>
+      <button class="left-margin" mat-raised-button (click)="onLogout()">
+        Log Out
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="main-panel">
+  <router-outlet></router-outlet>
+</div>

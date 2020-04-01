@@ -1,0 +1,25 @@
+<div fxLayout="row" fxFlex="grow" fxLayoutAlign="center center">
+  <mat-card fxLayout="column" fxLayoutAlign="center stretch">
+    <div fxLayoutAlign="center">
+      <h3>Registration</h3>
+    </div>
+    <mat-form-field class="long">
+      <input matInput [(ngModel)]="name" placeholder="name">
+    </mat-form-field>
+    <mat-form-field class="long">
+      <input matInput [(ngModel)]="email" type="email" placeholder="email" ngModel [email]="true">
+    </mat-form-field>
+    <mat-form-field class="long">
+      <input matInput [(ngModel)]="password" type="password" placeholder="password">
+    </mat-form-field>
+    <mat-checkbox color="primary" [(ngModel)]="isOwnerAccountChecked" class="margin">Owner account</mat-checkbox>
+    <div fxLayout="row" fxLayoutAlign="space-around stretch">
+      <button mat-raised-button (click)="onRegister()" color="primary"
+        [disabled]="!email || !name || !password">Submit</button>
+      <button mat-raised-button (click)="onCancelRegistration()" color="primary">Cancel</button>
+    </div>
+    <div class="alert alert-danger" *ngIf="error" style="margin-top: 5px;">
+      <p>{{ error }}</p>
+    </div>
+  </mat-card>
+</div>

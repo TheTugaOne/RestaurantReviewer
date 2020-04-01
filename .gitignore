@@ -1,0 +1,13 @@
+*.db
+*.user
+*.opendb
+*.sdf
+*.log
+*/.vs/
+*/.vs/*
+*.suo
+*.aps
+*.tlog
+
+RestaurantReviewerCore/x64
+RestaurantReviewerCore/RestaurantReviewerCore/x64/Debug

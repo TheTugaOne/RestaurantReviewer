@@ -1,0 +1,45 @@
+<div class="layout-container">
+    <div class="col-md-4 col-sm-6">
+        <mat-slider color="primary" min="0" max="5" step="0.5" value="0" [(ngModel)]="filterRestaurantsValue">
+        </mat-slider>
+        {{filterRestaurantsValue}}/5 Rating Filter
+    </div>
+    <div class="product-grid row">
+        <div class="col-md-3 col-sm-6" *ngFor="let restaurant of restaurantService.restaurantList;let i = index">
+            <div *ngIf="filterRestaurantsValue === 0 || restaurantAverageRating(i) >= filterRestaurantsValue">
+                <div class="image-container">
+                    <div class="product-image"
+                        [ngStyle]="{'background-image': 'url(./assets/images/hugo-restaurant-restaurant-chocolat.jpg)'}">
+                    </div>
+                    <div class="overlay">
+                        <button mat-raised-button [routerLink]="['../restaurant',i]">View Details</button>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="product-brand">{{restaurant.name}}</div>
+                    <div>
+                        <star-rating [value]="restaurantAverageRating(i)" [totalstars]="5" checkedcolor="orange"
+                            uncheckedcolor="black" size="40" readonly="true">
+                        </star-rating>
+                        <div>
+                            <div class="comment">
+                                {{restaurantAverageRating(i)}}/5 out of {{numberOfReviews(i)}} review(s)
+                            </div>
+                            <mat-icon matTooltip="This restaurant has pending reviews !"
+                                *ngIf="userService.currentUserType === 'Owner' && hasPendingReview(i)">warning
+                            </mat-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-details" *ngIf="userService.currentUserType === 'Admin'">
+                    <button mat-raised-button (click)="onEditRestaurant(i)" color="primary">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-raised-button (click)="onDeleteRestaurant(i)" color="primary" style="margin-left: 5px;">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

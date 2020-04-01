@@ -1,0 +1,12 @@
+* Instalation steps *
+* Ui
+- Navigate to the root of the application
+- Run "npm install" -> ng build
+- To run the application simply run "ng serve --open" and it will automatically open in your default browser on localhost:4200
+
+* Core/server
+- The 3rd party http server that this application relies on has been built with qt 5.13.2
+- In order to build & run the application without any additional steps you can use this QT version
+- If you want to use another version then you will need to rebuild https://code.qt.io/cgit/qt-labs/qthttpserver.git/
+- After rebuilding simply replace the "include" and "lib" folders from the 3rd party folder
+- Everything else should be ready to go as the application uses only QT libraries

@@ -1,0 +1,20 @@
+<div fxLayout="column" fxFlex="grow" fxLayoutAlign="center center">
+  <h2 mat-dialog-title>Edit Review</h2>
+
+  <mat-form-field class="long">
+    <input matInput type="number" placeholder="New rating (out of 5)" [(ngModel)]="newReview.rating">
+  </mat-form-field>
+
+  <mat-form-field class="long">
+    <input matInput type="text" placeholder="New comment" [(ngModel)]="newReview.comment">
+  </mat-form-field>
+
+  <mat-form-field class="long">
+    <input matInput type="text" placeholder="New owner reply" [(ngModel)]="newReview.reply">
+  </mat-form-field>
+
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <button mat-raised-button (click)="onConfirm()" color="primary">Confirm</button>
+    <button mat-raised-button (click)="onCancel()" color="primary" class="left-margin">Cancel</button>
+  </div>
+</div>

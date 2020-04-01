@@ -1,0 +1,32 @@
+<div fxLayout="row" fxFlex="grow" fxLayoutAlign="start start">
+    <mat-card fxLayout="column" fxLayoutAlign="start start">
+        <div fxLayoutAlign="left">
+            <h3>User {{review.creatorName}} on {{review.date}}</h3>
+        </div>
+        <star-rating [value]="review.rating" [totalstars]="5" checkedcolor="orange" uncheckedcolor="black" size="40"
+            readonly="true">
+        </star-rating>
+        <div class="comment">
+            {{review.comment}}
+        </div>
+        <div style="margin-left: 40px;">
+            <td>
+                <mat-label *ngIf="review.reply; else noReply" class="comment">{{review.reply}}</mat-label>
+            </td>
+            <ng-template #noReply>
+                <div *ngIf="userService.currentUserType !== 'Reviewer'">
+                    <td>
+                        <mat-form-field class="long">
+                            <input matInput type="text" placeholder="Reply to user comment" #ownerReply>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <button mat-raised-button (click)="onAcceptReview(ownerReply.value)" color="primary">
+                            Accept
+                        </button>
+                    </td>
+                </div>
+            </ng-template>
+        </div>
+    </mat-card>
+</div>
